@@ -1,7 +1,11 @@
 //
 #include<cstdlib>
 using std::rand;
-class die
+
+#ifndef DIE_H
+#define DIE_H
+
+class Die
 {
     public:
         int roll(){return (1 + (rand() % (size - 1)));};
@@ -9,3 +13,5 @@ class die
         int size{6};
 
 };
+
+#endif
