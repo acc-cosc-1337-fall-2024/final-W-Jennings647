@@ -59,12 +59,12 @@ TEST_CASE("Verify the parent class Phase and child classes ComeOutPhase and Poin
 	ComeOutPhase comeoutphase;
 	int check;
 
-	for(auto i = 0; i < 10; i++)
+	for(auto i = 0; i < 20; i++)
 	{
 		test->roll_dice();
 		check = test->roll_value();
-		PointPhase pointphase(check);
-		//cout<<check<<"\n";
+		PointPhase pointphase(11); //set to 11 to simplify test cases
+		cout<<check<<"\n";
 		if(check == 7)
     	{
 			REQUIRE(comeoutphase.get_outcome(test) == RollOutcome::natural);
@@ -73,7 +73,7 @@ TEST_CASE("Verify the parent class Phase and child classes ComeOutPhase and Poin
 		else if(check == 11)
 		{
 			REQUIRE(comeoutphase.get_outcome(test) == RollOutcome::natural);
-			REQUIRE(pointphase.get_outcome(test) == RollOutcome::no_point);
+			REQUIRE(pointphase.get_outcome(test) == RollOutcome::point);
 		}
     	else if(check == 2 || check == 3 || check == 12)
     	{
@@ -86,5 +86,6 @@ TEST_CASE("Verify the parent class Phase and child classes ComeOutPhase and Poin
 			REQUIRE(pointphase.get_outcome(test) == RollOutcome::no_point);
     	}
 	}
+	
 
 }

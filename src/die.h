@@ -8,7 +8,7 @@ using std::rand;
 class Die
 {
     public:
-        int roll(){return (1 + (rand() % (size - 1)));};
+        int roll(){return (1 + (rand() % (size)));}; //just fixed this, whoops
     private:
         int size{6};
 
