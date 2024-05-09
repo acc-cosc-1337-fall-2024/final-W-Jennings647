@@ -18,7 +18,7 @@ int main()
 	int rolled_value = roll->roll_value();
 	ComeOutPhase come_out_phase;
 	char win = 'N';
-	if(come_out_phase.get_outcome(roll) == RollOutcome::natural){win = 'Y'; cout<<"Rolled "<<rolled_value<<", natural! You win!\n";}
+	if(come_out_phase.get_outcome(roll) == RollOutcome::natural){win = 'Y'; cout<<"Rolled "<<rolled_value<<", natural!\n";}
 	
 	
 	if(win == 'N') 
@@ -60,7 +60,8 @@ int main()
 				win = 'Y';
 			}
 		}
-	} //sorry that the program is so different from the instructions, but i wanted to make it so that end on a natural 7
+	} //sorry that the program is so different from the instructions, but i wanted to make it so that end on a natural 7.
+	//Not sure if this is actually craps works, but hopefully this is ok with you
 
 	cout<<"Previous rolls:\n";
 	shooter.display_rolled_values();
